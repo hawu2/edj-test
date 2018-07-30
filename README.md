@@ -13,7 +13,7 @@ pip install selenium
 
 ## How to run it
 
-###GUI test by Selenium:
+### GUI test by Selenium:
 Demo testing add an event.
 cd GUI_test/features
 behave test_add.feature
