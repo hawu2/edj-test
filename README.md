@@ -1,6 +1,6 @@
 # edj-test
 
-##How to use it
+## How to use it
 
 python3 -m venv edjtest
 cd edjtest
@@ -11,7 +11,7 @@ pip install selenium
 
 
 
-##How to run it
+## How to run it
 
 ###GUI test by Selenium:
 Demo testing add an event.
@@ -21,11 +21,11 @@ behave test_add.feature
 works with localhost only. not working with live server
 
 
-###API Test by Selenium:
+### API Test by Selenium:
 Todo
 
 
-#Live Server:
+# Live Server:
 https://edjuster.herokuapp.com/
 Database backend change from derby to JawsDB MySQL: todo
 
