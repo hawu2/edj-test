@@ -8,22 +8,31 @@ import platform
 
 @given("I open eventlist test page")
 def step_impl(context):
-    context.browser.get("http://localhost:8080/eventlist/")
+    try:
+        with open("test_setup.json") as fd:
+            data = json.load(fd)
+    except:
+        assert data
+
+    context.browser.get(data["test-server"])
 
 
 @then("The page open")
 def step_impl(context):
     assert "Edjuster Assignment" == context.browser.title
 
+
 @given("I am already on the landing page")
 def step_impl(context):
     assert "Edjuster Assignment" == context.browser.title
+
 
 @when("Click on Events link")
 def step_impl(context):
     elem = context.browser.find_element_by_link_text("Events")
     print(elem)
     elem.click()
+
 
 @then("I can see Events Manager Page in the page")
 def step_impl(context):
@@ -42,7 +51,6 @@ def step_impl(context):
 
 @then("Input event data and save")
 def step_impl(context):
-
     event_data = gen_event_data()
     write_to_data_json(event_data)
 
@@ -61,7 +69,6 @@ def step_impl(context):
 
 @then("Verify from GUI")
 def step_impl(context):
-
     #  verify data matches stored data
     # blar blar..
     pass
